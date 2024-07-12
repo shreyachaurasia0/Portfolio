@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+   
+    <style>
+        *{
+margin: 0;
+padding: 0;
+font-family: 'Poppins',sans-serif;
+box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color:  #080808;
+    color: #fff ;
+}
+#header{
+    width:100% ;
+    height: 100vh;
+    background-image: url(Screenshot\ 2023-12-25\ 173135.png);
+    background-size: cover;
+    background-position:center ;
+}
+.container{
+    padding: 10px 10%;
+
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content:space-between ;
+    flex-wrap: wrap;
+}
+
+    nav ul  li{
+        display: inline-block;
+        list-style: none;
+        margin:10px 20px;
+
+    }
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+
+}
+.header-text{
+    margin-top: 20%;
+    font-size: 30px;
+}
+.header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+}
+.header-text h1 span{
+    color: #ff004f;
+}
+/*    about    */
+#about{
+    padding: 80px 0;
+    color: #ababab;
+}
+.row{
+    display: flex;
+    justify-content:space-between ;
+    flex-wrap: wrap;
+}
+.about-col-1{
+    flex-basis: 35%;
+
+}
+.about-col-1 img{
+    width: 100%;
+  border-radius: 15px;
+}
+.about-col-2{
+    flex-basis: 60%;
+}
+.sub-tittle{
+    font-size: 60px;
+    font-weight: 600;
+    color:#fff ;
+}
+.tab-tittles{
+    display:flex;
+    margin:20px 0 40px;
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after{
+    content:'';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+.tab-links.active-link::after{
+    width: 50%;
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-contents ul li span{
+    color: #b54769;
+    font-size: 14px;
+}
+.tab-contents{
+display: none;
+}
+.tab-contents.active-tab{
+   display:block; 
+}
+#services{
+    padding: 30px 0;
+}
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+    
+}
+.services-list div{
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s,transform 0.5s;
+}
+.services-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.services-list div a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.services-list div:hover{
+    background:#ff004f ;
+   transform: translateY(-10px);
+}
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p{
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: #ff004f;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.social-icons{
+    margin-top:30px;
+
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icons a:hover{
+    color: #ff004f;
+    transform: translateY(-5px);
+}
+
+.btn{
+    color: #fff;
+    background: #ff004f;
+    display: inline-block;
+    border-radius: 0%;
+    border-color: #ff004f;
+    padding:14px 60px ;
+    font-size: 18px ;
+    margin-top: 20px;
+}
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding:15px ;
+    margin:15px 0;
+    color: #fff;
+    font-size:18px;
+    border-radius: 6px;
+}
+form .btn{
+    padding:14px 60px ;
+    font-size: 18px ;
+    margin-top: 20px;
+    cursor:pointer
+}
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight:300 ;
+    margin-top: 20px;
+}
+/*css for small screen*/
+nav .fa-solid{
+    display: none;
+}
+@media only screen and (max-width: 600px){
+    #header{
+        background-image: url(Screenshot\ \(2\)23.png);/*yaha wo photo dalo jo phone pe dikhne ke liye applicable ho*/
+    }
+    .header-text{
+        margin-top:100%;
+        font-size: 16px;
+    }
+    .header-text h1{
+        font-size: 30px;
+    }
+    nav .fa-solid{
+    display: block;
+    font-size: 25px;
+}
+.logo{
+    right:-200px ;
+    width: 200px;
+}
+nav ul{
+    background: #ff004f;
+    position: fixed;
+    top: 0;
+    right:-200px ;
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 2;
+    transition: right 0.5s;
+}
+nav ul li{
+    display: block;
+    margin: 25px;
+
+}
+nav ul .fa-solid{/*cross icon ka class name hai fas*/
+position: absolute;
+top: 25px;
+left: 25px;
+cursor: pointer;
+}
+.sub-tittle{
+    font-size:40px;
+}
+.about-col-1, .about-col-2{
+  flex-basis: 100%;  
+}
+.about-col-1{
+    margin-bottom:30px ;
+}
+.about-col-2{
+    font-size: 14px;
+}
+.tab-links{
+    font-size: 16px;
+    margin-right: 20px;
+}
+.contact-left,.contact-right{
+    flex-basis: 100%;
+}
+.copyright{
+    font-size: 14px;
+}
+}
+
+    </style>
+   
+   <script src="https://kit.fontawesome.com/2de9690fd1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="SHREYA3.png"    class="logo">
+                <ul id="sidemenu" >
+                    <li><a href="#header">Home</a> </li>
+                    <li><a href="#about">About</a> </li>
+                    <li><a href="#services">Skills</a> </li>
+                    <li><a href="#contact">Contact</a> </li>
+                    <li><a href="#contact">Message</a> </li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars"onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Software Engineer</p>
+                <h1>Hii There,I'm <span>Shreya</span> <br>A CS student... </h1>
+            </div>
+        </div>
+    </div>
+    <!-- about section -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="profile-pic.png" >
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-tittle">About Me</h1>
+                    <p>Hello, I'm    <b>Shreya Chaurasia</b>  , a passionate   Computer   Science   Engineering   student driven by a curiosity for technology and a love for challenges. Currently pursuing my<b> B Tech in Computer Science Engineering</b>, my tech journey started with a fascination for algorithms and the thrill of coding.<br>
+                        <br>
+
+                        I've honed my skills in languages like Java and C, along with crafting web languages such as HTML, CSS, JavaScript , React Js , Node Js . The opportunity to innovate, create, and contribute to the world fuels my passion, and I find joy in solving complex problems, particularly in Data Structures and Algorithms and solve DSA questions regularly on the leading coding platforms like LeetCode and GeeksForGeeks.<br><br>
+                        
+                        My journey has been enriched by exciting projects that have deepened my skills and understanding. I'm eager to collaborate, connect, and explore the vast realms of technology, including coding, projects, and AI. Outside of coding, you'll find me reading about tech trends and exploring open-source projects.<br><br>
+                        
+                        Let's connect and explore the boundless possibilities in the world of technology together. Open to discussions on coding, projects, and AI  connecting with fellow enthusiasts and professionals in the tech space!"<br></p>
+               <div class="tab-tittles">
+                <p class="tab-links active-link"onclick="opentab('skills')">Skills</p>
+                <p class="tab-links "onclick="opentab('experience')">Experience</p>
+                <p class="tab-links "onclick="opentab('education')">Education</p>
+               </div>
+               <div class="tab-contents active-tab" id="skills">
+                <ul>
+                    <li><span>HTML</span><br></li>
+                    <li><span>CSS</span><br></li>
+                    <li><span>JavaScript</span><br></li>
+                    <li><span>React Js</span><br></li>
+                    <li><span>Node Js</span><br></li>
+                  
+                    <li><span>Java</span><br> Data structures and algorithms</li> 
+                     
+                </ul>
+               </div>
+               <div class="tab-contents" id="experience">
+                <ul>
+                    <li><span>2022-2026</span><br>Currently persuing BTECH in Computer Science Enginieering</li>
+                    
+                </ul>
+               </div>
+               <div class="tab-contents"id="education">
+                <ul>
+                    <li><span>School</span><br>Nirmala Eng. Hr. Sec. School (CBSE),Korba Chattisgarh</li>
+                    <li><span>College</span><br>Kalinga University,Kotni Raipur</li>
+
+                </ul>
+               </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-tittle">My Skills</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Programming languages</h2>
+                    <p>Java, C, Python</p>
+               
+                </div>
+<div>
+    <i class="fa-solid fa-code"></i>
+    <h2>Frontend Dev</h2>
+    <p>HTML , CSS , JavaScript , React Js </p>
+
+</div>
+<div>
+    <i class="fa-solid fa-code"></i>
+    <h2>Backend Dev</h2>
+    <p>Node Js , Python </p>
+
+</div>
+<div>
+    <i class="fa-solid fa-database"></i>
+    <h2>DataBase</h2>
+    <p>SQL,MongoDB</p>
+
+</div>
+<div>
+    <i class="fa-solid fa-code"></i>
+    <h2>Core:</h2>
+    <p>Data Structures and Algorithms , Object-Oriented Programming , Operating System , DBMS </p>
+
+</div>
+<div>
+    <i class="fa-brands fa-tools"></i>
+    <h2>Frameworks and Libraies</h2>
+    <p> Express Js ,Bootstrap,Tailwind CSS </p>
+
+</div>
+<div>
+    <i class="fa-solid fa-screwdriver-wrench"></i>
+    <h2>Tools:</h2>
+    <p>Git , GitHub , VS Code ,Postman </p>
+
+</div>
+            </div>
+        </div>
+    </div>
+    <div id="portfolio">
+    <div class="container">
+        <h1 class="sub-tittle"></h1>
+    </div>    
+    </div>\
+    <!-- contact -->
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+<h1 class="sub-tittle">Contact Me</h1>
+<p ><i class="fa-solid fa-paper-plane"></i>shreyachaurasia623@gmail.com</p>
+<p><i class="fa-solid fa-phone"></i>6232887283</p>
+<div class="social-icons">
+  
+
+
+    <a href="https://www.linkedin.com/in/shreya-chaurasia-ln"<i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://www.instagram.com/shreyachaurasia.dev"<i class="fa-brands fa-instagram"></i></a>
+    <a href="https://github.com/shreyachaurasia0/shreyachaurasia0"<i class="fa-brands fa-github"></i></a>
+    <a href="https://leetcode.com/ShreyaChaurasia_/"<i class="fa-solid fa-code"></i></a> 
+    <a href="https://www.geeksforgeeks.org/user/harshchau0cpx/"<i class="fa-solid fa-user"></i></a>
+
+</div>
+<a href="my-cv.pdf" download class="btn">Download CV</a>
+                </div>
+                <div class="contact-right">
+                 <form >
+                 <input type="text" name="Name" placeholder="Your Name" required> 
+                 <input type="email" name="email" placeholder="Your Email" required>
+                 <textarea name="Message"  rows="6" placeholder="Your Message"></textarea>
+                 <button type="submit" class="btn">Submit</button>  
+                 </form>   
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © Shreya 2023</p>
+        </div>
+    </div>
+<script>
+    var tablinks= document.getElementsByClassName("tab-links");
+    var tabcontents= document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+
+<script>
+    var sidemenu= document.getElementById("sidemenu");
+    function openmenu(){
+        sidemenu.style.right="0";
+    }
+    function closemenu(){
+        sidemenu.style.right="-200px";
+    }
+</script>
+
+</body>
+</html>
